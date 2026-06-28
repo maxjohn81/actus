@@ -55,7 +55,7 @@ export default function Favoris() {
        data={favorites}
        keyExtractor={(item, index) => index.toString()}
        renderItem={({ item }) => (
-        <View className="flex-row justify-between mb-6">
+        <View className="flex-row justify-between mb-6 m-3">
          {/* Card */}
          <TouchableOpacity
           className="flex-1 flex-row"
