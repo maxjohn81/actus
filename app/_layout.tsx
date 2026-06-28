@@ -2,6 +2,11 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
+import '../global.css'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Toast from "react-native-toast-message";
+
+const queryClient = new QueryClient()
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
@@ -14,11 +19,16 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
+      <QueryClientProvider client={queryClient}>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="categories" options={{ headerShown: false }} />
+        </Stack>
+
+        <StatusBar style="auto" />
+        <Toast />
+
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }
