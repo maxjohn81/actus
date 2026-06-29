@@ -12,7 +12,6 @@ export default function ParametresScreen() {
  const router = useRouter();
 
  const [notificationsEnabled, setNotificationsEnabled] = useState(true);
- const [offlineEnabled, setOfflineEnabled] = useState(true);
  const [isDark, setIsDark] = useState(true)
  const favorites = useFavoriteStore((state) => state.favorites);
 
@@ -80,7 +79,6 @@ export default function ParametresScreen() {
         <Text className="text-sm text-gray-500 dark:text-gray-400">Français</Text>
        </View>
       </View>
-      <Text className="text-gray-400 text-xl">›</Text>
      </TouchableOpacity>
 
      {/* Pays / Région */}
@@ -94,7 +92,6 @@ export default function ParametresScreen() {
         <Text className="text-sm text-gray-500 dark:text-gray-400">France</Text>
        </View>
       </View>
-      <Text className="text-gray-400 text-xl">›</Text>
      </TouchableOpacity>
 
      {/* Notifications */}
