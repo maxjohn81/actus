@@ -12,7 +12,6 @@ export default function ParametresScreen() {
  const router = useRouter();
 
  const [notificationsEnabled, setNotificationsEnabled] = useState(true);
- const [isDark, setIsDark] = useState(true)
  const favorites = useFavoriteStore((state) => state.favorites);
 
  // Fonction pour calculer la taille approximative
@@ -55,17 +54,17 @@ export default function ParametresScreen() {
          Apparence
         </Text>
         <Text className="text-sm text-gray-500 dark:text-gray-400">
-         Mode Sombre
+         Système
         </Text>
        </View>
       </View>
-
+{/* 
       <Switch
        value={isDark}
        onValueChange={setIsDark}
        trackColor={{ false: '#D1D5DB', true: '#6C4CF1' }}
        thumbColor="#ffffff"
-      />
+      /> */}
      </TouchableOpacity>
 
      {/* Langue */}
