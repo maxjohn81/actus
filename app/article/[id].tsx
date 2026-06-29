@@ -100,7 +100,7 @@ export default function ArticleDetails() {
      <View>
       {/* Category Badge */}
       {news.author && <View style={{ width: 200, borderRadius: 7, padding: 5, position: "relative", top: -15, left: 15 }} className="bg-primary">
-       <Text className="text-white text-center text-xl font-bold tracking-wide uppercase">
+       <Text className="text-white text-center text-xl font-bold tracking-wide">
         Par {news.author}
        </Text>
       </View>}

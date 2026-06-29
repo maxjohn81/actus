@@ -52,7 +52,7 @@ export default function HomeScreen() {
       type: "success",
       text1: isCurrentlyFavorite ? "Retiré des favoris" : "Ajouté aux favoris",
       text2: item.title,
-      position: "bottom",
+      position: "top",
       visibilityTime: 2500,
     });
   };
@@ -112,6 +112,8 @@ export default function HomeScreen() {
         />
       </View>
 
+
+
       {/* Section "À la une" + Erreur */}
       {error ? (
         <View className="m-3 flex-1 justify-center items-center">
@@ -165,6 +167,15 @@ export default function HomeScreen() {
             </Pressable>
           </View>
 
+            {
+              isLoading &&
+              (
+                <View className="py-20 items-center">
+                  <ActivityIndicator size="large" color="#8B00FF" />
+                  <Text className="mt-4 text-gray-500">Chargement des actualités...</Text>
+                </View>
+              )
+            }
           <View className='m-3 mt-1 flex-1'>
             <FlatList
               data={articles}

@@ -34,7 +34,7 @@ export default function Recherche() {
    type: "success",
    text1: isCurrentlyFavorite ? "Retiré des favoris" : "Ajouté aux favoris",
    text2: item.title,
-   position: "bottom",
+   position: "top",
    visibilityTime: 2200,
   });
  };
